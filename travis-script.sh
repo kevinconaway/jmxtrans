@@ -74,7 +74,7 @@ if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     fi
   else
     echo "Building feature branch"
-    mvn verify --settings ${MVN_SETTINGS} -U -B -V -PwithMutationTests,rpm,deb,\!gpg -Dgpg.passphraseServerId=skip
+    mvn verify --settings ${MVN_SETTINGS} -X -U -B -V -PwithMutationTests,rpm,deb,\!gpg -Dgpg.passphraseServerId=skip
   fi
 else
   echo "Building pull request"
